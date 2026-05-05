@@ -17,15 +17,16 @@ type Testimonial = {
 const StarRating = ({
   value,
   onChange,
-  size = 6,
+  size = "sm",
   interactive = false,
 }: {
   value: number;
   onChange?: (n: number) => void;
-  size?: number;
+  size?: "sm" | "lg";
   interactive?: boolean;
 }) => {
   const [hover, setHover] = useState(0);
+  const sizeClass = size === "lg" ? "w-8 h-8" : "w-5 h-5";
   return (
     <div className="flex gap-1">
       {[1, 2, 3, 4, 5].map((n) => {
@@ -42,7 +43,7 @@ const StarRating = ({
             aria-label={`${n} estrela${n > 1 ? "s" : ""}`}
           >
             <Star
-              className={`w-${size} h-${size} ${
+              className={`${sizeClass} ${
                 active
                   ? "fill-primary text-primary drop-shadow-[0_0_6px_hsl(var(--neon-cyan)/0.8)]"
                   : "text-muted-foreground/40"
@@ -176,7 +177,7 @@ const Testimonials = () => {
 
             <div>
               <label className="text-sm font-medium mb-2 block">Avaliação</label>
-              <StarRating value={rating} onChange={setRating} interactive size={8} />
+              <StarRating value={rating} onChange={setRating} interactive size="lg" />
             </div>
 
             <Button type="submit" variant="neon" size="xl" className="w-full" disabled={submitting}>

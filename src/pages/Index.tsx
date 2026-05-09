@@ -1,4 +1,4 @@
-import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle } from "lucide-react";
+import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/luver-logo.jpeg";
 import Testimonials from "@/components/Testimonials";

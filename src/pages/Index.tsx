@@ -1,4 +1,4 @@
-import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle } from "lucide-react";
+import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/luver-logo.jpeg";
 import Testimonials from "@/components/Testimonials";
@@ -126,9 +126,10 @@ const Index = () => {
             <p className="text-muted-foreground text-lg">Entre em contato e vamos conversar sobre o seu projeto.</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 max-w-5xl mx-auto">
             <ContactCard icon={MessageCircle} label="WhatsApp" value="(51) 99181-6438" href={WHATSAPP} />
             <ContactCard icon={Mail} label="E-mail" value="evertonfsilveira@luvertech.com.br" href="mailto:evertonfsilveira@luvertech.com.br" />
+            <ContactCard icon={Instagram} label="Instagram" value="@luver_tech" href="https://www.instagram.com/luver_tech/" />
             <ContactCard icon={MapPin} label="Localização" value="Todo o Rio Grande do Sul" />
           </div>
 

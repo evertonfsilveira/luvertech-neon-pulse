@@ -1,6 +1,6 @@
 import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/luver-logo.jpeg";
+import logo from "@/assets/luver-logo.png";
 import Testimonials from "@/components/Testimonials";
 
 const WHATSAPP = "https://wa.me/5551991816438";

@@ -1,8 +1,8 @@
 import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/luver-logo.png";
-import serverRack from "@/assets/server-rack.jpg";
-import serverNetwork from "@/assets/server-network.jpg";
+import oracleServers from "@/assets/oracle_servers.png.asset.json";
+import atosServers from "@/assets/atos_servers.png.asset.json";
 import Testimonials from "@/components/Testimonials";
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -92,28 +92,24 @@ const Index = () => {
                     <div className="mt-8 grid sm:grid-cols-2 gap-5">
                       <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
                         <img
-                          src={serverRack}
-                          alt="Rack de servidores com iluminação neon azul"
+                          src={oracleServers.url}
+                          alt="Servidores Oracle Database Appliance e Storage Shelf"
                           loading="lazy"
-                          width={1024}
-                          height={1024}
-                          className="w-full h-48 object-cover"
+                          className="w-full h-56 object-contain bg-white/95 p-2"
                         />
-                        <figcaption className="p-3 text-sm text-muted-foreground text-center border-t border-primary/20">
-                          Racks de servidores de alta performance
+                        <figcaption className="p-3 text-xs italic text-muted-foreground/90 leading-relaxed border-t border-primary/20">
+                          ✨ Atuar como Service Provider (prestador de serviços) para a ORACLE é a validação de uma jornada que iniciou lá em Outubro de 2014. Em respeito às normas da LGPD e políticas de segurança, as fotos utilizadas são de divulgação pública oficial das empresas. Fonte: docs.oracle.com
                         </figcaption>
                       </figure>
                       <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
                         <img
-                          src={serverNetwork}
-                          alt="Sala de servidores com cabeamento estruturado"
+                          src={atosServers.url}
+                          alt="Servidores Atos BullSequana"
                           loading="lazy"
-                          width={1024}
-                          height={1024}
-                          className="w-full h-48 object-cover"
+                          className="w-full h-56 object-contain bg-white/95 p-2"
                         />
-                        <figcaption className="p-3 text-sm text-muted-foreground text-center border-t border-primary/20">
-                          Cabeamento estruturado e redes corporativas
+                        <figcaption className="p-3 text-xs italic text-muted-foreground/90 leading-relaxed border-t border-primary/20">
+                          Atuar como Service Provider (prestador de serviços) para a ATOS é a validação de uma jornada que iniciou lá em Outubro de 2014. Em respeito às normas da LGPD e políticas de segurança, as fotos utilizadas são de divulgação pública oficial das empresas. Fonte: support.bull.com
                         </figcaption>
                       </figure>
                     </div>

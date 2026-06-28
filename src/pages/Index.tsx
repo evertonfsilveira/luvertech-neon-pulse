@@ -1,6 +1,8 @@
 import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/luver-logo.png";
+import serverRack from "@/assets/server-rack.jpg";
+import serverNetwork from "@/assets/server-network.jpg";
 import Testimonials from "@/components/Testimonials";
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -72,19 +74,53 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)]"
-                style={{ background: "var(--gradient-card)" }}
-              >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
-                  <Icon className="w-7 h-7 text-primary" />
+            {services.map(({ icon: Icon, title, desc }) => {
+              const isInfra = title === "Infraestrutura de TI";
+              return (
+                <div
+                  key={title}
+                  className={`group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)] ${isInfra ? "md:col-span-2 lg:row-span-2" : ""}`}
+                  style={{ background: "var(--gradient-card)" }}
+                >
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{desc}</p>
+
+                  {isInfra && (
+                    <div className="mt-8 grid sm:grid-cols-2 gap-5">
+                      <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
+                        <img
+                          src={serverRack}
+                          alt="Rack de servidores com iluminação neon azul"
+                          loading="lazy"
+                          width={1024}
+                          height={1024}
+                          className="w-full h-48 object-cover"
+                        />
+                        <figcaption className="p-3 text-sm text-muted-foreground text-center border-t border-primary/20">
+                          Racks de servidores de alta performance
+                        </figcaption>
+                      </figure>
+                      <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
+                        <img
+                          src={serverNetwork}
+                          alt="Sala de servidores com cabeamento estruturado"
+                          loading="lazy"
+                          width={1024}
+                          height={1024}
+                          className="w-full h-48 object-cover"
+                        />
+                        <figcaption className="p-3 text-sm text-muted-foreground text-center border-t border-primary/20">
+                          Cabeamento estruturado e redes corporativas
+                        </figcaption>
+                      </figure>
+                    </div>
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

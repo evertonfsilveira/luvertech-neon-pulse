@@ -79,7 +79,7 @@ const Index = () => {
               return (
                 <div
                   key={title}
-                  className={`group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)] ${isInfra ? "md:col-span-2 lg:row-span-2" : ""}`}
+                  className="group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)]"
                   style={{ background: "var(--gradient-card)" }}
                 >
                   <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
@@ -89,27 +89,27 @@ const Index = () => {
                   <p className="text-muted-foreground leading-relaxed">{desc}</p>
 
                   {isInfra && (
-                    <div className="mt-8 grid sm:grid-cols-2 gap-5">
-                      <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
+                    <div className="mt-5 grid grid-cols-2 gap-3">
+                      <figure className="rounded-lg overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_12px_hsl(var(--neon-cyan)/0.2)]">
                         <img
                           src={oracleServers.url}
-                          alt="Servidores Oracle Database Appliance e Storage Shelf"
+                          alt="Servidores Oracle Database Appliance"
                           loading="lazy"
-                          className="w-full h-56 object-contain bg-white/95 p-2"
+                          className="w-full h-24 object-contain bg-white/95 p-1"
                         />
-                        <figcaption className="p-3 text-xs italic text-muted-foreground/90 leading-relaxed border-t border-primary/20">
-                          ✨ Atuar como Service Provider (prestador de serviços) para a ORACLE é a validação de uma jornada que iniciou lá em Outubro de 2014. Em respeito às normas da LGPD e políticas de segurança, as fotos utilizadas são de divulgação pública oficial das empresas. Fonte: docs.oracle.com
+                        <figcaption className="px-2 py-1.5 text-[10px] italic text-muted-foreground/90 leading-snug border-t border-primary/20">
+                          Service Provider ORACLE desde 2014. Imagem de divulgação oficial — Fonte: docs.oracle.com
                         </figcaption>
                       </figure>
-                      <figure className="rounded-xl overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_20px_hsl(var(--neon-cyan)/0.2)]">
+                      <figure className="rounded-lg overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_12px_hsl(var(--neon-cyan)/0.2)]">
                         <img
                           src={atosServers.url}
                           alt="Servidores Atos BullSequana"
                           loading="lazy"
-                          className="w-full h-56 object-contain bg-white/95 p-2"
+                          className="w-full h-24 object-contain bg-white/95 p-1"
                         />
-                        <figcaption className="p-3 text-xs italic text-muted-foreground/90 leading-relaxed border-t border-primary/20">
-                          Atuar como Service Provider (prestador de serviços) para a ATOS é a validação de uma jornada que iniciou lá em Outubro de 2014. Em respeito às normas da LGPD e políticas de segurança, as fotos utilizadas são de divulgação pública oficial das empresas. Fonte: support.bull.com
+                        <figcaption className="px-2 py-1.5 text-[10px] italic text-muted-foreground/90 leading-snug border-t border-primary/20">
+                          Service Provider ATOS desde 2014. Imagem de divulgação oficial — Fonte: support.bull.com
                         </figcaption>
                       </figure>
                     </div>

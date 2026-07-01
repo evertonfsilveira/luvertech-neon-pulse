@@ -118,6 +118,8 @@ const Index = () => {
           </div>
           <div className="mt-6 p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
             <p className="text-sm text-muted-foreground leading-relaxed italic">
+              ✨ Atuar como Service Provider (prestador de serviços) para a <span className="text-primary/90">ORACLE</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
+              <br /><br />
               Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
               <br />
               Em respeito às normas da <span className="text-primary/90">LGPD</span> e políticas de segurança, as fotos utilizadas nesta postagem são de divulgação pública oficial das empresas.

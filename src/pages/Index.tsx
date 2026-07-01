@@ -116,6 +116,25 @@ const Index = () => {
               <img src="/infraestrutura-storage.png" alt="Storage Oracle" className="w-full h-64 object-contain" />
             </div>
           </div>
+          <div className="mt-6 p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+            <p className="text-sm text-muted-foreground leading-relaxed italic">
+              Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
+              <br />
+              Em respeito às normas da <span className="text-primary/90">LGPD</span> e políticas de segurança, as fotos utilizadas nesta postagem são de divulgação pública oficial das empresas.
+              <br />
+              <span className="text-xs text-muted-foreground/80">
+                Fonte: Imagens extraídas do repositório público oficial:{" "}
+                <a
+                  href="https://docs.oracle.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neon hover:underline break-all"
+                >
+                  https://docs.oracle.com/.../overview-oracle-database...
+                </a>
+              </span>
+            </p>
+          </div>
         </DialogContent>
       </Dialog>
 

@@ -75,22 +75,49 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc }) => (
-              <div
-                key={title}
-                className="group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)]"
-                style={{ background: "var(--gradient-card)" }}
-              >
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
-                  <Icon className="w-7 h-7 text-primary" />
+            {services.map(({ icon: Icon, title, desc }) => {
+              const isInfra = title === "Infraestrutura de TI";
+              return (
+                <div
+                  key={title}
+                  onClick={isInfra ? () => setInfraOpen(true) : undefined}
+                  role={isInfra ? "button" : undefined}
+                  tabIndex={isInfra ? 0 : undefined}
+                  onKeyDown={isInfra ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setInfraOpen(true); } } : undefined}
+                  className={`group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)] ${isInfra ? "cursor-pointer" : ""}`}
+                  style={{ background: "var(--gradient-card)" }}
+                >
+                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
+                    <Icon className="w-7 h-7 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{desc}</p>
+                  {isInfra && (
+                    <p className="mt-4 text-xs uppercase tracking-widest text-primary/80">Clique para ver mais →</p>
+                  )}
                 </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{desc}</p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
+
+      {/* Infraestrutura Modal */}
+      <Dialog open={infraOpen} onOpenChange={setInfraOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/50 shadow-[0_0_60px_hsl(var(--neon-cyan)/0.35)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-neon tracking-wide">Infraestrutura de TI</DialogTitle>
+          </DialogHeader>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+            <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+              <img src="/infraestrutura-rack.png" alt="Rack de servidores" className="w-full h-64 object-contain" />
+            </div>
+            <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+              <img src="/infraestrutura-storage.png" alt="Storage Oracle" className="w-full h-64 object-contain" />
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       {/* Diferenciais */}
       <section id="diferenciais" className="py-24 relative overflow-hidden">

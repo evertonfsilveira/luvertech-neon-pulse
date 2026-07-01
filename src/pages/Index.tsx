@@ -16,6 +16,7 @@ const services = [
 ];
 
 const Index = () => {
+  const [infraOpen, setInfraOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}

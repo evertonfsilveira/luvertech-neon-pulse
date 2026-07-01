@@ -1,8 +1,6 @@
 import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/luver-logo.png";
-import oracleServers from "@/assets/oracle_servers.png.asset.json";
-import atosServers from "@/assets/atos_servers.png.asset.json";
 import Testimonials from "@/components/Testimonials";
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -74,49 +72,19 @@ const Index = () => {
             </h2>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map(({ icon: Icon, title, desc }) => {
-              const isInfra = title === "Infraestrutura de TI";
-              return (
-                <div
-                  key={title}
-                  className="group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)]"
-                  style={{ background: "var(--gradient-card)" }}
-                >
-                  <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
-                    <Icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{desc}</p>
-
-                  {isInfra && (
-                    <div className="mt-5 grid grid-cols-2 gap-3">
-                      <figure className="rounded-lg overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_12px_hsl(var(--neon-cyan)/0.2)]">
-                        <img
-                          src={oracleServers.url}
-                          alt="Servidores Oracle Database Appliance"
-                          loading="lazy"
-                          className="w-full h-24 object-contain bg-white/95 p-1"
-                        />
-                        <figcaption className="px-2 py-1.5 text-[10px] italic text-muted-foreground/90 leading-snug border-t border-primary/20">
-                          Service Provider ORACLE desde 2014. Imagem de divulgação oficial — Fonte: docs.oracle.com
-                        </figcaption>
-                      </figure>
-                      <figure className="rounded-lg overflow-hidden border border-primary/30 bg-background/40 shadow-[0_0_12px_hsl(var(--neon-cyan)/0.2)]">
-                        <img
-                          src={atosServers.url}
-                          alt="Servidores Atos BullSequana"
-                          loading="lazy"
-                          className="w-full h-24 object-contain bg-white/95 p-1"
-                        />
-                        <figcaption className="px-2 py-1.5 text-[10px] italic text-muted-foreground/90 leading-snug border-t border-primary/20">
-                          Service Provider ATOS desde 2014. Imagem de divulgação oficial — Fonte: support.bull.com
-                        </figcaption>
-                      </figure>
-                    </div>
-                  )}
+            {services.map(({ icon: Icon, title, desc }) => (
+              <div
+                key={title}
+                className="group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)]"
+                style={{ background: "var(--gradient-card)" }}
+              >
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
+                  <Icon className="w-7 h-7 text-primary" />
                 </div>
-              );
-            })}
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

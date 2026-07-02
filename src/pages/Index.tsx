@@ -192,7 +192,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Testimonials />
+      
 
       {/* Contato */}
       <section id="contato" className="py-24 relative">

@@ -108,34 +108,62 @@ const Index = () => {
           <DialogHeader>
             <DialogTitle className="text-2xl text-neon tracking-wide">Infraestrutura de TI</DialogTitle>
           </DialogHeader>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
-            <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
-              <img src="/infraestrutura-rack.png" alt="Rack de servidores" className="w-full h-64 object-contain" />
+          <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
+            {/* BLOCO 1 - ATOS */}
+            <div className="flex flex-col gap-4">
+              <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+                <img src="/infraestrutura-rack.png" alt="Servidor ATOS Bullion" className="w-full h-64 object-contain" />
+              </div>
+              <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                  Atuar como Service Provider (prestador de serviços) para a <span className="text-primary/90">ATOS</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
+                  <br />
+                  Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
+                  <br />
+                  Em respeito às normas da <span className="text-primary/90">LGPD</span> e políticas de segurança, as fotos utilizadas nesta postagem são de divulgação pública oficial das empresas.
+                  <br /><br />
+                  <span className="text-xs text-muted-foreground/80">
+                    Fonte: Imagens extraídas do repositório público oficial:{" "}
+                    <a
+                      href="https://support.bull.com/ols/product/platforms/bullion"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neon hover:underline break-all"
+                    >
+                      https://support.bull.com/ols/product/platforms/bullion
+                    </a>
+                  </span>
+                </p>
+              </div>
             </div>
-            <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
-              <img src="/infraestrutura-storage.png" alt="Storage Oracle" className="w-full h-64 object-contain" />
+
+            {/* BLOCO 2 - ORACLE */}
+            <div className="flex flex-col gap-4">
+              <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+                <img src="/infraestrutura-storage.png" alt="Storage Oracle" className="w-full h-64 object-contain" />
+              </div>
+              <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                  ✨ Atuar como Service Provider (prestador de serviços) para a <span className="text-primary/90">ORACLE</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
+                  <br />
+                  Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
+                  <br />
+                  Em respeito às normas da <span className="text-primary/90">LGPD</span> e políticas de segurança, as fotos utilizadas nesta postagem são de divulgação pública oficial das empresas.
+                  <br /><br />
+                  <span className="text-xs text-muted-foreground/80">
+                    Fonte: Imagens extraídas do repositório público oficial:{" "}
+                    <a
+                      href="https://docs.oracle.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-neon hover:underline break-all"
+                    >
+                      https://docs.oracle.com/.../overview-oracle-database...
+                    </a>
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="mt-6 p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
-            <p className="text-sm text-muted-foreground leading-relaxed italic">
-              ✨ Atuar como Service Provider (prestador de serviços) para a <span className="text-primary/90">ORACLE</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
-              <br /><br />
-              Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
-              <br />
-              Em respeito às normas da <span className="text-primary/90">LGPD</span> e políticas de segurança, as fotos utilizadas nesta postagem são de divulgação pública oficial das empresas.
-              <br />
-              <span className="text-xs text-muted-foreground/80">
-                Fonte: Imagens extraídas do repositório público oficial:{" "}
-                <a
-                  href="https://docs.oracle.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-neon hover:underline break-all"
-                >
-                  https://docs.oracle.com/.../overview-oracle-database...
-                </a>
-              </span>
-            </p>
           </div>
         </DialogContent>
       </Dialog>

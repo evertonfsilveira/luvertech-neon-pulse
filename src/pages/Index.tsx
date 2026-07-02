@@ -3,7 +3,7 @@ import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCirc
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
-import Testimonials from "@/components/Testimonials";
+
 
 const WHATSAPP = "https://wa.me/5551991816438";
 
@@ -29,7 +29,7 @@ const Index = () => {
           <nav className="hidden md:flex gap-8 text-sm text-muted-foreground">
             <a href="#servicos" className="hover:text-primary transition-colors">Serviços</a>
             <a href="#diferenciais" className="hover:text-primary transition-colors">Diferenciais</a>
-            <a href="#depoimentos" className="hover:text-primary transition-colors">Depoimentos</a>
+            
             <a href="#contato" className="hover:text-primary transition-colors">Contato</a>
           </nav>
           <Button asChild variant="neon" size="sm">
@@ -192,7 +192,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Testimonials />
+      
 
       {/* Contato */}
       <section id="contato" className="py-24 relative">

@@ -20,6 +20,7 @@ const services = [
 const Index = () => {
   const [infraOpen, setInfraOpen] = useState(false);
   const [camerasOpen, setCamerasOpen] = useState(false);
+  const [suporteOpen, setSuporteOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}

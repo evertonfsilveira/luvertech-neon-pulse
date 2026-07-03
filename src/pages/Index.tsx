@@ -3,6 +3,7 @@ import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCirc
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
+import camerasAsset from "@/assets/cameras-monitoramento.jpg.asset.json";
 
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -17,6 +18,7 @@ const services = [
 
 const Index = () => {
   const [infraOpen, setInfraOpen] = useState(false);
+  const [camerasOpen, setCamerasOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}
@@ -77,14 +79,20 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map(({ icon: Icon, title, desc }) => {
               const isInfra = title === "Infraestrutura de TI";
+              const isCameras = title === "Câmeras e Monitoramento";
+              const isClickable = isInfra || isCameras;
+              const openModal = () => {
+                if (isInfra) setInfraOpen(true);
+                else if (isCameras) setCamerasOpen(true);
+              };
               return (
                 <div
                   key={title}
-                  onClick={isInfra ? () => setInfraOpen(true) : undefined}
-                  role={isInfra ? "button" : undefined}
-                  tabIndex={isInfra ? 0 : undefined}
-                  onKeyDown={isInfra ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setInfraOpen(true); } } : undefined}
-                  className={`group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)] ${isInfra ? "cursor-pointer" : ""}`}
+                  onClick={isClickable ? openModal : undefined}
+                  role={isClickable ? "button" : undefined}
+                  tabIndex={isClickable ? 0 : undefined}
+                  onKeyDown={isClickable ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(); } } : undefined}
+                  className={`group relative p-8 rounded-2xl border border-border bg-card transition-smooth hover:border-primary hover:-translate-y-2 hover:shadow-[0_0_40px_hsl(var(--neon-cyan)/0.4)] ${isClickable ? "cursor-pointer" : ""}`}
                   style={{ background: "var(--gradient-card)" }}
                 >
                   <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-primary/10 border border-primary/30 group-hover:bg-primary/20 transition-smooth">
@@ -92,7 +100,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3 group-hover:text-neon transition-smooth">{title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{desc}</p>
-                  {isInfra && (
+                  {isClickable && (
                     <p className="mt-4 text-xs uppercase tracking-widest text-primary/80">Clique para ver mais →</p>
                   )}
                 </div>
@@ -167,6 +175,28 @@ const Index = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Câmeras Modal */}
+      <Dialog open={camerasOpen} onOpenChange={setCamerasOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/50 shadow-[0_0_60px_hsl(var(--neon-cyan)/0.35)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-neon tracking-wide">Câmeras e Monitoramento</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
+            <div className="flex flex-col gap-4">
+              <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+                <img src={camerasAsset.url} alt="Sistema de monitoramento por câmeras Intelbras" className="w-full h-auto max-h-[500px] object-contain" />
+              </div>
+              <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                  Você busca mais <span className="text-primary/90">tranquilidade</span> para sua residência ou empresa? A falta de monitoramento pode gerar vulnerabilidades que comprometem o seu <span className="text-primary/90">patrimônio</span> e a <span className="text-primary/90">segurança</span> de quem você ama.
+                </p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
 
       {/* Diferenciais */}
       <section id="diferenciais" className="py-24 relative overflow-hidden">

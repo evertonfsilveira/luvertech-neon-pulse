@@ -82,10 +82,12 @@ const Index = () => {
             {services.map(({ icon: Icon, title, desc }) => {
               const isInfra = title === "Infraestrutura de TI";
               const isCameras = title === "Câmeras e Monitoramento";
-              const isClickable = isInfra || isCameras;
+              const isSuporte = title === "Suporte Técnico";
+              const isClickable = isInfra || isCameras || isSuporte;
               const openModal = () => {
                 if (isInfra) setInfraOpen(true);
                 else if (isCameras) setCamerasOpen(true);
+                else if (isSuporte) setSuporteOpen(true);
               };
               return (
                 <div

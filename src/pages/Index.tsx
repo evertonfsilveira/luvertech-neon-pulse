@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
 import camerasAsset from "@/assets/cameras-monitoramento.jpg.asset.json";
+import suporteAsset from "@/assets/suporte-tecnico.jpg.asset.json";
 
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -19,6 +20,7 @@ const services = [
 const Index = () => {
   const [infraOpen, setInfraOpen] = useState(false);
   const [camerasOpen, setCamerasOpen] = useState(false);
+  const [suporteOpen, setSuporteOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}
@@ -80,10 +82,12 @@ const Index = () => {
             {services.map(({ icon: Icon, title, desc }) => {
               const isInfra = title === "Infraestrutura de TI";
               const isCameras = title === "Câmeras e Monitoramento";
-              const isClickable = isInfra || isCameras;
+              const isSuporte = title === "Suporte Técnico";
+              const isClickable = isInfra || isCameras || isSuporte;
               const openModal = () => {
                 if (isInfra) setInfraOpen(true);
                 else if (isCameras) setCamerasOpen(true);
+                else if (isSuporte) setSuporteOpen(true);
               };
               return (
                 <div
@@ -196,6 +200,29 @@ const Index = () => {
           </div>
         </DialogContent>
       </Dialog>
+
+      {/* Suporte Técnico Modal */}
+      <Dialog open={suporteOpen} onOpenChange={setSuporteOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/50 shadow-[0_0_60px_hsl(var(--neon-cyan)/0.35)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-neon tracking-wide">Suporte Técnico</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
+            <div className="flex flex-col gap-4">
+              <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
+                <img src={suporteAsset.url} alt="Suporte técnico Luver Tech" className="w-full h-auto max-h-[500px] object-contain" />
+              </div>
+              <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+                <p className="text-sm text-muted-foreground leading-relaxed italic">
+                  <span className="text-primary/90">Análise minuciosa</span> e <span className="text-primary/90">diagnóstico preciso</span>: na <span className="text-primary/90">LUVER TECH</span>, cada desafio técnico é tratado com foco total na <span className="text-primary/90">estabilidade</span> do seu negócio.
+                </p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+
 
 
       {/* Diferenciais */}

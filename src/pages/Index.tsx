@@ -116,7 +116,7 @@ const Index = () => {
               </div>
               <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
                 <p className="text-sm text-muted-foreground leading-relaxed italic">
-                  Atuar como Service Provider (prestador de serviços) para a <span className="text-primary/90">ATOS</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
+                  Atuar como Service Provider (<span className="text-primary/90">prestador de serviços</span>) para a <span className="text-primary/90">ATOS</span> é a validação de uma jornada que iniciou lá em Outubro de 2014.
                   <br />
                   Gratidão por fazer parte desse ecossistema de inovação e tecnologia de ponta. 🚀🔒
                   <br />

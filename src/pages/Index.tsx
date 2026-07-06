@@ -226,6 +226,22 @@ const Index = () => {
         </DialogContent>
       </Dialog>
 
+      {/* Construção de Sites Modal */}
+      <Dialog open={sitesOpen} onOpenChange={setSitesOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/50 shadow-[0_0_60px_hsl(var(--neon-cyan)/0.35)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-neon tracking-wide">Construção de Sites</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
+            <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+              <p className="text-sm text-muted-foreground leading-relaxed italic">
+                Desenvolvemos <span className="text-primary/90">sites institucionais</span> e <span className="text-primary/90">landing pages</span> rápidos, responsivos e otimizados, alinhados à identidade da sua marca e prontos para gerar resultados.
+              </p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
 
 
 

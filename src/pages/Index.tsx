@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
+import { Server, ShieldCheck, Headphones, Camera, Cpu, Code, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
@@ -15,12 +15,14 @@ const services = [
   { icon: Headphones, title: "Suporte Técnico", desc: "Atendimento rápido e especializado quando você mais precisa." },
   { icon: Camera, title: "Câmeras e Monitoramento", desc: "Soluções completas para proteger o que realmente importa." },
   { icon: Cpu, title: "Automatizações", desc: "Processos inteligentes que otimizam tarefas e aumentam resultados." },
+  { icon: Code, title: "Construção de Sites", desc: "Sites profissionais e modernos para fortalecer a presença digital do seu negócio." },
 ];
 
 const Index = () => {
   const [infraOpen, setInfraOpen] = useState(false);
   const [camerasOpen, setCamerasOpen] = useState(false);
   const [suporteOpen, setSuporteOpen] = useState(false);
+  const [sitesOpen, setSitesOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}
@@ -83,11 +85,13 @@ const Index = () => {
               const isInfra = title === "Infraestrutura de TI";
               const isCameras = title === "Câmeras e Monitoramento";
               const isSuporte = title === "Suporte Técnico";
-              const isClickable = isInfra || isCameras || isSuporte;
+              const isSites = title === "Construção de Sites";
+              const isClickable = isInfra || isCameras || isSuporte || isSites;
               const openModal = () => {
                 if (isInfra) setInfraOpen(true);
                 else if (isCameras) setCamerasOpen(true);
                 else if (isSuporte) setSuporteOpen(true);
+                else if (isSites) setSitesOpen(true);
               };
               return (
                 <div

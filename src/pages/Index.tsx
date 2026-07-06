@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Server, ShieldCheck, Headphones, Camera, Cpu, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
+import { Server, ShieldCheck, Headphones, Camera, Cpu, Code, MapPin, Mail, MessageCircle, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
@@ -15,12 +15,14 @@ const services = [
   { icon: Headphones, title: "Suporte Técnico", desc: "Atendimento rápido e especializado quando você mais precisa." },
   { icon: Camera, title: "Câmeras e Monitoramento", desc: "Soluções completas para proteger o que realmente importa." },
   { icon: Cpu, title: "Automatizações", desc: "Processos inteligentes que otimizam tarefas e aumentam resultados." },
+  { icon: Code, title: "Construção de Sites", desc: "Sites profissionais e modernos para fortalecer a presença digital do seu negócio." },
 ];
 
 const Index = () => {
   const [infraOpen, setInfraOpen] = useState(false);
   const [camerasOpen, setCamerasOpen] = useState(false);
   const [suporteOpen, setSuporteOpen] = useState(false);
+  const [sitesOpen, setSitesOpen] = useState(false);
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       {/* Nav */}
@@ -83,11 +85,13 @@ const Index = () => {
               const isInfra = title === "Infraestrutura de TI";
               const isCameras = title === "Câmeras e Monitoramento";
               const isSuporte = title === "Suporte Técnico";
-              const isClickable = isInfra || isCameras || isSuporte;
+              const isSites = title === "Construção de Sites";
+              const isClickable = isInfra || isCameras || isSuporte || isSites;
               const openModal = () => {
                 if (isInfra) setInfraOpen(true);
                 else if (isCameras) setCamerasOpen(true);
                 else if (isSuporte) setSuporteOpen(true);
+                else if (isSites) setSitesOpen(true);
               };
               return (
                 <div
@@ -217,6 +221,22 @@ const Index = () => {
                   <span className="text-primary/90">Análise minuciosa</span> e <span className="text-primary/90">diagnóstico preciso</span>: na <span className="text-primary/90">LUVER TECH</span>, cada desafio técnico é tratado com foco total na <span className="text-primary/90">estabilidade</span> do seu negócio.
                 </p>
               </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Construção de Sites Modal */}
+      <Dialog open={sitesOpen} onOpenChange={setSitesOpen}>
+        <DialogContent className="max-w-4xl bg-card border-primary/50 shadow-[0_0_60px_hsl(var(--neon-cyan)/0.35)]">
+          <DialogHeader>
+            <DialogTitle className="text-2xl text-neon tracking-wide">Construção de Sites</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
+            <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
+              <p className="text-sm text-muted-foreground leading-relaxed italic">
+                Desenvolvemos <span className="text-primary/90">sites institucionais</span> e <span className="text-primary/90">landing pages</span> rápidos, responsivos e otimizados, alinhados à identidade da sua marca e prontos para gerar resultados.
+              </p>
             </div>
           </div>
         </DialogContent>

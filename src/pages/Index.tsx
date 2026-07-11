@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
 import camerasAsset from "@/assets/cameras-monitoramento.jpg.asset.json";
-import suporteAsset from "@/assets/suporte-tecnico.jpg.asset.json";
+import suporteImg from "@/assets/suporte-tecnico.jpg";
 
 
 const WHATSAPP = "https://wa.me/5551991816438";
@@ -214,7 +214,7 @@ const Index = () => {
           <div className="flex flex-col gap-6 mt-2 max-h-[70vh] overflow-y-auto pr-2">
             <div className="flex flex-col gap-4">
               <div className="rounded-xl overflow-hidden border border-primary/30 bg-background/60 p-3">
-                <img src={suporteAsset.url} alt="Suporte técnico Luver Tech" className="w-full h-auto max-h-[500px] object-contain" />
+                <img src={suporteImg} alt="Suporte técnico Luver Tech" className="w-full h-auto max-h-[500px] object-contain" />
               </div>
               <div className="p-4 rounded-xl border border-primary/20 bg-background/40 text-left">
                 <p className="text-sm text-muted-foreground leading-relaxed italic">

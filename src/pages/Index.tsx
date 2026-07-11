@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import logo from "@/assets/luver-logo.png";
 import camerasAsset from "@/assets/cameras-monitoramento.jpg.asset.json";
-import suporteAsset from "@/assets/suporte-tecnico.jpg.asset.json";
+import suporteImg from "@/assets/suporte-tecnico.jpg";
 
 
 const WHATSAPP = "https://wa.me/5551991816438";
